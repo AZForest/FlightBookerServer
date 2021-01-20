@@ -75,4 +75,4 @@ app.delete('/BookedFlights', (req, res) => {
 
 })
 
-app.listen(port, () => console.log(`Example app listening on port ${port}.`));
+app.listen(process.env.PORT, () => console.log(`Example app listening on port ${process.env.PORT}.`));
