@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3001;
+const port = Process.env.PORT || 3001;
 
 //BOdy Parser Middleware
 app.use(express.json());
@@ -75,4 +75,4 @@ app.delete('/BookedFlights', (req, res) => {
 
 })
 
-app.listen(process.env.PORT, () => console.log(`Example app listening on port ${process.env.PORT}.`));
+app.listen(port, () => console.log(`Example app listening on port ${port}.`));
