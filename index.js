@@ -3,7 +3,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 //BOdy Parser Middleware
-app.use(express.json());
+/* app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 const airlines = ["SouthWest", "American", "JetBlue", "United", "Delta", "Alaskan", "Hawaiian"];
@@ -20,9 +20,6 @@ for (let i = 0; i < 30; i++) {
         date: `1/${Math.floor(Math.random() * 30)}`,
         price: Math.floor(Math.random() * 1000)
     }
-    /* if (flightData[i].dCity === flightData[i].aCity) {
-        
-    } */
 }
 
 
@@ -41,10 +38,10 @@ randomizeFlightData = (array) => {
 }
 
 
-let bookedFlights = [];
+let bookedFlights = []; */
 
 app.get('/', (req, res) => res.send("Hello World"));
-app.get('/availableFlights', (req, res) => res.send(flightData));
+/* app.get('/availableFlights', (req, res) => res.send(flightData));
 app.get('/refreshFlights', (req, res) => {
     let newArray = randomizeFlightData(flightData);
     flightData = newArray;
@@ -73,6 +70,6 @@ app.delete('/BookedFlights', (req, res) => {
     })
     bookedFlights = updateFlights;
 
-})
+}) */
 
 app.listen(port, () => console.log(`Example app listening on port ${port}.`));
