@@ -1,6 +1,6 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const port = process.env.PORT || 3000;
+let port = process.env.PORT || 3002;
 
 //BOdy Parser Middleware
 /* app.use(express.json());
@@ -40,7 +40,9 @@ randomizeFlightData = (array) => {
 
 let bookedFlights = []; */
 
-app.get('/', (req, res) => res.send("Hello World"));
+app.get('/', (req, res) => {
+    res.send("Hello World")
+});
 /* app.get('/availableFlights', (req, res) => res.send(flightData));
 app.get('/refreshFlights', (req, res) => {
     let newArray = randomizeFlightData(flightData);
