@@ -3,11 +3,11 @@ const app = express();
 let port = process.env.PORT || 3002;
 
 //BOdy Parser Middleware
-/* app.use(express.json());
+app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-const airlines = ["SouthWest", "American", "JetBlue", "United", "Delta", "Alaskan", "Hawaiian"];
-const cities = ["Los Angeles", "New York", "Miami", "Sacramento", "Seattle", "Salt Lake City", "Portland", "Austin", "Detroit", "Chicago", "Newark", "Dover", "Cincinati", "Cleveland", "Dallas", "El Paso", "Minneaoplis", " Atlanta", "Jacksonville", "Honolulu", "San Diego", "Austin", "St. Louis", "Tampa Bay", "Orlando", "New Orleans", "Lafayette", "Bismark", "Boise", "Boston", "Hilo", "Washington DC", "Des Moines"];
+const airlines = require("./data/airlines");
+const cities = require("./data/cities");
 
 
 let flightData = [];
@@ -38,12 +38,12 @@ randomizeFlightData = (array) => {
 }
 
 
-let bookedFlights = []; */
+let bookedFlights = [];
 
 app.get('/', (req, res) => {
-    res.send("Hello World")
+    res.send("Flight Booker Server")
 });
-/* app.get('/availableFlights', (req, res) => res.send(flightData));
+app.get('/availableFlights', (req, res) => res.send(flightData));
 app.get('/refreshFlights', (req, res) => {
     let newArray = randomizeFlightData(flightData);
     flightData = newArray;
@@ -72,6 +72,6 @@ app.delete('/BookedFlights', (req, res) => {
     })
     bookedFlights = updateFlights;
 
-}) */
+})
 
 app.listen(port, () => console.log(`Example app listening on port ${port}.`));
