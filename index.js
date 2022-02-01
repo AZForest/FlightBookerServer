@@ -25,12 +25,14 @@ for (let i = 0; i < 30; i++) {
 
 randomizeFlightData = (array) => {
     for (let i = 0; i < 30; i++) {
+        let randomDate = Math.floor(Math.random() * 30);
+        if (randomDate === 0) randomDate = 1;
         array[i] = 
         {
             carrier: airlines[Math.floor(Math.random() * airlines.length)],
             dCity: cities[Math.floor(Math.random() * cities.length)],
             aCity: cities[Math.floor(Math.random() * cities.length)],
-            date: `1/${Math.floor(Math.random() * 30)}`,
+            date: `1/${randomDate}`,
             price: Math.floor(Math.random() * 1000)
         }
     }
